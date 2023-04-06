@@ -6,8 +6,6 @@ import Todo from "./models/todo";
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
 
-  // [new Todo("Dummy text1"), new Todo("Second dummy")];
-
   const addTodoHandler = (todoText: string) => {
     const newTodo = new Todo(todoText);
 
@@ -16,10 +14,17 @@ function App() {
     });
   };
 
+  const deleteTodoHandler = (test: string) => {
+    setTodos((prevState) => {
+      let newList = prevState.filter((element) => element.id !== test);
+      return newList;
+    });
+  };
+
   return (
     <div>
       <NewTodo onAddTodo={addTodoHandler} />
-      <Todos items={todos} />
+      <Todos items={todos} onDeleteTodo={deleteTodoHandler} />
     </div>
   );
 }
