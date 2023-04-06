@@ -6,15 +6,13 @@ const ToDoUI: React.FC<{
   onDeleteTodo: (test: string) => void;
 }> = (props) => {
   return (
-    <li className={Classes.item}>
+    <li
+      className={Classes.item}
+      onClick={() => {
+        props.onDeleteTodo(props.id);
+      }}
+    >
       {props.text}
-      <button
-        onClick={() => {
-          props.onDeleteTodo(props.id);
-        }}
-      >
-        DEL
-      </button>
     </li>
   );
 };

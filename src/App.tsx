@@ -1,8 +1,10 @@
 import TasksLayout from "./layouts/TasksLayout";
+import "./App.css";
 
 function App() {
   return (
-    <div>
+    <div className="wrapperBig">
+      <TasksLayout />
       <TasksLayout />
       <TasksLayout />
     </div>

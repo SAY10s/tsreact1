@@ -1,0 +1,3 @@
+.wrapperBig div:nth-child(odd) {
+  background-color: antiquewhite;
+}

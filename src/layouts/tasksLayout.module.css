@@ -1,3 +1,4 @@
 .taskLayoutWrapper {
-  margin-top: 100px;
+  margin: 100px 50px;
+  border: 5px solid black;
 }
