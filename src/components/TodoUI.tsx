@@ -7,7 +7,7 @@ const ToDoUI: React.FC<{
 }> = (props) => {
   return (
     <li className={Classes.item}>
-      {props.text}{" "}
+      {props.text}
       <button
         onClick={() => {
           props.onDeleteTodo(props.id);

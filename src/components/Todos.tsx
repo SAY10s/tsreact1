@@ -15,6 +15,7 @@ const Todos: React.FC<{
           id={item.id}
           text={item.text}
           onDeleteTodo={props.onDeleteTodo}
+          // 434. bind żeby nie musieć łapać z dołu id, tylko już tutaj
         />
       ))}
     </ul>
