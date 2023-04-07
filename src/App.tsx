@@ -4,7 +4,7 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [layouts, setLayouts] = useState(["xD", "lets go!"]);
+  const [layouts, setLayouts] = useState<string[]>([]);
 
   const addLayoutHandler = (title: string) => {
     setLayouts((prevState) => {
