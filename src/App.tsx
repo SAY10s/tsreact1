@@ -12,11 +12,24 @@ function App() {
     });
   };
 
+  const deleteLayoutHandler = (title: string) => {
+    setLayouts((prevState) => {
+      return prevState.filter((element) => {
+        return element !== title;
+      });
+    });
+  };
+
   return (
     <>
       <div className="wrapperBig">
         {layouts.map((element) => {
-          return <TasksLayout title={element} />;
+          return (
+            <TasksLayout
+              title={element}
+              deleteLayoutHandler={deleteLayoutHandler}
+            />
+          );
         })}
       </div>
 

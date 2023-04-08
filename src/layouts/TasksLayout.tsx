@@ -4,7 +4,10 @@ import Todos from "../components/Todos";
 import Todo from "../models/todo";
 import Classes from "./tasksLayout.module.css";
 
-const TasksLayout: React.FC<{ title: string }> = (props) => {
+const TasksLayout: React.FC<{
+  title: string;
+  deleteLayoutHandler: (title: string) => void;
+}> = (props) => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodoHandler = (todoText: string) => {
@@ -27,6 +30,13 @@ const TasksLayout: React.FC<{ title: string }> = (props) => {
       <h2>{props.title}</h2>
       <NewTodo onAddTodo={addTodoHandler} />
       <Todos items={todos} onDeleteTodo={deleteTodoHandler} />
+      <button
+        onClick={() => {
+          props.deleteLayoutHandler(props.title);
+        }}
+      >
+        Delete
+      </button>
     </div>
   );
 };
